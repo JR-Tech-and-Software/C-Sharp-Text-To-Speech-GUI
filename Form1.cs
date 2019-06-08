@@ -221,10 +221,13 @@ namespace Text_To_Speech
             {
                 saveFile(textBox1.Text, fileOpen);
             }
+            
+            // Reset the fileOpen variable and Text Box
             fileOpen = "";
             textBox1.Text = "";
         }
-
+        
+        // If exit is clicked, check to see if the file is saved then exit.
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Saved() == 0)
