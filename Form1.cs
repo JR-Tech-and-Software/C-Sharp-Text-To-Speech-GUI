@@ -124,7 +124,7 @@ namespace Text_To_Speech
         public int Saved()
         {
             // Is the file in the fileOpen variable?
-            if (fileOpen == "")
+            if (fileOpen == "" || fileOpen == "C:\\Windows\\Temp\\TTSFile.txt")
             {
                 // If they answered yes, return 0. If not, return 3.
                 if (MessageBox.Show("Your work isn't saved! Would you like to save it?", "Clear Work?", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -200,7 +200,7 @@ namespace Text_To_Speech
         // save file dialog.
         private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if(fileOpen == "")
+            if(fileOpen == "" || fileOpen == "C:\\Windows\\Temp\\TTSFile.txt")
             {
                 saveFileWithDialog(textBox1.Text);
             }
@@ -209,7 +209,8 @@ namespace Text_To_Speech
                 saveFile(textBox1.Text, fileOpen);
             }
         }
-
+        
+        // If we click new, figure out if the file is saved using the function above
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(Saved() == 0)
